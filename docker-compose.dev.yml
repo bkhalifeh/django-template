@@ -1,0 +1,15 @@
+services:
+  backend-db:
+    image: postgres:17.2-alpine3.20
+    environment:
+      POSTGRES_DB: django_template
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: 123456
+      PGDATA: /data/postgres
+    volumes:
+      - database-vol:/data/postgres
+    ports:
+      - "5432:5432"
+
+volumes:
+  database-vol:
